@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Еркеназдың Ұзату тойы</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_uzatu.css') }}">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <p class="pre-title">Қыз Ұзату</p>
+                <div class="ornament-top"></div> <h1 class="bride-name">Еркеназ</h1>
+                <div class="ornament-bottom"></div>
+                <p class="event-date-top">14.06.2026</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content-wrapper">
+        <section class="invitation-text section-padding">
+            <div class="container">
+                <p class="greeting">Құрметті қонақтар!</p>
+                <p class="main-para">
+                    Аяулы қызымыз <strong>Еркеназдың</strong> ұзату тойына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.
+                </p>
+                <div class="hosts">
+                    <p>Той иелері:</p>
+                    <p><strong> Айгүл – Дастан</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timer-section section-padding">
+            <div class="container">
+                <h3 class="section-subtitle">Тойға дейін қалды:</h3>
+                <div id="countdown" class="timer-display">
+                    <div class="time-block">
+                        <span id="days">00</span>
+                        <p>Күн</p>
+                    </div>
+                    <div class="time-block">
+                        <span id="hours">00</span>
+                        <p>Сағат</p>
+                    </div>
+                    <div class="time-block">
+                        <span id="minutes">00</span>
+                        <p>Минут</p>
+                    </div>
+                    <div class="time-block">
+                        <span id="seconds">00</span>
+                        <p>Секунд</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section section-padding">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Уақыты:</h3>
+                        <p>14 маусым, 2026 жыл</p>
+                        <p>Сағат 17:00</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Мекенжайы:</h3>
+                        <p>Семей қаласы, "Кен-Сарай" мейрамханасы</p>
+                        <p>Севастопольская көш., 20/1</p>
+                        <a href="https://go.2gis.com/Xpyia" target="_blank" class="map-button">2GIS картасынан ашу</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guest-form-section section-padding">
+            <div class="container">
+                <div class="guest-card">
+                    <h3 class="section-subtitle">Тойға келетініңізді растаңыз:</h3>
+                    <input type="text" id="guestName" placeholder="Есіміңізді жазыңыз..." class="name-input">
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="zhauap" value="Иә, барамын"> <span>Иә, барамын 🌸</span></label>
+                        <label class="radio-label"><input type="radio" name="zhauap" value="Жұбайыммен барамын"> <span>Жұбайыммен барамын 💑</span></label>
+                        <label class="radio-label"><input type="radio" name="zhauap" value="Өкінішке орай, бара алмаймын"> <span>Өкінішке орай, бара алмаймын 😔</span></label>
+                    </div>
+                    <button class="zayotrp">Жауапты жіберу</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="music-player" id="musicBtn">
+        <div class="music-icon">🎵</div>
+    </div>
+    <audio id="bgMusic" loop src="{{ url_for('static', filename='uzatu_music.mp3') }}"></audio>
+
+    <script src="{{ url_for('static', filename='script_uzatu.js') }}"></script>
+</body>
+</html>
