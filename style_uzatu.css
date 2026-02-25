@@ -90,7 +90,7 @@ body {
     border: 1px solid #eee;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
     padding: 60px 30px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     border-radius: 30px;
 }
 
@@ -392,3 +392,4 @@ body {
         font-size: 1rem;
     }
 }
+
