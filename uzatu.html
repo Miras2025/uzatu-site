@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Еркеназдың Ұзату тойы</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style_uzatu.css') }}">
+    <link rel="stylesheet" href="style_uzatu.css">
 </head>
 <body>
 
@@ -94,8 +94,9 @@
     <div class="music-player" id="musicBtn">
         <div class="music-icon">🎵</div>
     </div>
-    <audio id="bgMusic" loop src="{{ url_for('static', filename='uzatu_music.mp3') }}"></audio>
+    <audio id="bgMusic" loop src="uzatu_music.mp3"></audio>
 
-    <script src="{{ url_for('static', filename='script_uzatu.js') }}"></script>
+    <script src="script_uzatu.js"></script>
 </body>
+
 </html>
