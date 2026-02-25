@@ -317,3 +317,78 @@ body {
     border-radius: 20px !important; /* Скругляем углы, чтобы подходило под стиль сайта */
     border: 1px solid #eee !important;
 }
+
+
+
+
+.calendar-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.calendar-title {
+    font-family: 'Great Vibes', cursive; /* Немесе өзіңіздің шрифтіңіз */
+    font-size: 2.2rem;
+    color: #8c6d1a;
+    margin-bottom: 30px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #a3a3a3;
+    padding-bottom: 10px;
+}
+
+.calendar-day {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    position: relative;
+    color: #4A4A4A;
+}
+
+/* Той болатын күнді ерекшелеу */
+.wedding-day {
+    background-color: #D4AF37; /* Алтын түс */
+    color: white !important;
+    border-radius: 50%;
+    font-weight: bold;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+.heart-icon {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #D4AF37;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .calendar-container {
+        padding: 30px 15px;
+    }
+    .calendar-day {
+        font-size: 1rem;
+    }
+}
