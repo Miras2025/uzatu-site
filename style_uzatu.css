@@ -295,3 +295,25 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 
 }
+
+
+
+/* Контейнер для виджета 2ГИС */
+.dg-widget-link {
+    display: none; /* Скрываем лишние текстовые ссылки под картой, если они не нужны */
+}
+
+/* Центрирование самого виджета */
+#dg-widget-container {
+    max-width: 850px; /* Ограничиваем максимальную ширину как у вашего .container */
+    margin: 20px auto; /* Центрируем и добавляем отступы сверху/снизу */
+    padding: 0 15px; /* Боковые отступы для мобильных устройств */
+    display: flex;
+    justify-content: center;
+}
+
+/* Настройка iframe внутри виджета */
+#dg-widget-container iframe {
+    border-radius: 20px !important; /* Скругляем углы, чтобы подходило под стиль сайта */
+    border: 1px solid #eee !important;
+}
