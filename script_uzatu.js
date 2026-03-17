@@ -1,6 +1,8 @@
 // 1. КОНСТАНТАЛАР (Telegram деректері)
 const token = '8668030843:AAHj08Tesh2W1gajMqHYNt8GeLv9sNu3rEU'; 
 const chatId = '663718699';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxLLOVRsCU6cnOWqkY4jpb4gVJLvV_uY9LTMkykQ4RWZEPL_YneYRIIfW0ojzZz_l_9rA/exec'; // Google Web App URL
+
 
 // 2. ЭЛЕМЕНТТЕРДІ ТАБУ
 const musicBtn = document.getElementById('musicBtn');
@@ -53,6 +55,21 @@ const updateTimer = setInterval(() => {
     }
 }, 1000);
 
+async function sendToSheets(name, answer, eventType) {
+    try {
+        await fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, answer: answer, event_type: eventType })
+        });
+        return true;
+    } catch (error) {
+        console.error("Кестеге жіберу қатесі:", error);
+        return false;
+    }
+}
+
 // 5. TELEGRAM-ҒА ЖІБЕРУ ФУНКЦИЯСЫ 🤖
 async function sendToTelegram(message) {
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
@@ -92,13 +109,16 @@ if (submitBtn) {
         // Батырманы уақытша блоктау (екі рет басылып кетпеуі үшін)
         submitBtn.disabled = true;
         submitBtn.innerText = "Жіберілуде...";
-
+        const eventTitle = "🌸 Еркеназдың Ұзату тойы"; // Үйлену тойы сайтында атауын өзгертіңіз
         const answer = selectedOption.value;
         const fullMessage = `🌸 <b>Еркеназдың Ұзату тойы</b>\n\n👤 <b>Қонақ:</b> ${name}\n📋 <b>Шешімі:</b> ${answer}\n\n📅 <i>Жіберілген уақыты: ${new Date().toLocaleString('kk-KZ')}</i>`;
 
-        const success = await sendToTelegram(fullMessage);
+        const [tgSuccess] = await Promise.all([
+            sendToTelegram(fullMessage),
+            sendToSheets(name, answer, eventTitle)
+        ]);
 
-        if (success) {
+        if (tgSuccess) {
             alert("Жауабыңыз жіберілді! Рақмет! 🌸");
             nameInput.value = "";
             // Радио батырмаларды тазарту
