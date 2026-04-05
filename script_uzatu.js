@@ -1,6 +1,6 @@
 // 1. КОНСТАНТАЛАР (Telegram деректері)
 const token = '8668030843:AAHj08Tesh2W1gajMqHYNt8GeLv9sNu3rEU'; 
-const chatId = '663718699';
+const chatId = '-1003703157449';
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxLLOVRsCU6cnOWqkY4jpb4gVJLvV_uY9LTMkykQ4RWZEPL_YneYRIIfW0ojzZz_l_9rA/exec'; // Google Web App URL
 
 
